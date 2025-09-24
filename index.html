@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>像素坦克大战</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="board-wrapper">
+        <canvas id="battlefield" width="416" height="416"></canvas>
+        <div id="overlay" class="overlay hidden" aria-live="polite">
+          <div class="panel">
+            <h1 id="overlay-title"></h1>
+            <div id="overlay-body" class="panel-body"></div>
+          </div>
+        </div>
+      </section>
+      <aside class="hud" aria-label="游戏状态">
+        <div class="scoreboard">
+          <div class="score-row">
+            <span class="label">HI-SCORE</span>
+            <span id="hud-hi-score" class="value">000000</span>
+          </div>
+          <div class="score-row">
+            <span class="label">SCORE</span>
+            <span id="hud-score" class="value">000000</span>
+          </div>
+          <div class="score-row">
+            <span class="label">STAGE</span>
+            <span id="hud-stage" class="value">01</span>
+          </div>
+          <div class="score-row">
+            <span class="label">LIVES</span>
+            <span id="hud-lives" class="value">03</span>
+          </div>
+        </div>
+        <div class="audio-controls">
+          <button id="mute-toggle" class="audio-btn" type="button">🔈 启用音频</button>
+          <label class="slider-label" for="volume-slider">音量</label>
+          <input
+            id="volume-slider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.7"
+            aria-label="音量控制"
+          />
+        </div>
+        <div class="instructions">
+          <p>控制：↑↓←→ 移动 • 空格 开火 • Enter/ P 暂停 • M 静音</p>
+          <p class="hint">首次按键或点击以启用音频</p>
+        </div>
+      </aside>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
